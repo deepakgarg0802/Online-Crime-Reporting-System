@@ -40,4 +40,4 @@ The person with a criminal record could be dangerous to the society. There is a 
 5. ./manage.py migrate<br>
 6. ./manage.py runserver<br>
 
-P.S: Don't forget to set DEBUG = True in  raj_hack2k17/src/raj_hack/settings.py when running locally. 
+P.S: Don't forget to set DEBUG = True in  Online-Crime-Reporting-System/src/raj_hack/settings.py when running locally. 
