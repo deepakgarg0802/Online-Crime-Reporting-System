@@ -19,12 +19,6 @@ Most Wanted Person’s Online Directory:
 The person with a criminal record could be dangerous to the society. There is a need for online directory listing of the criminals on the most wanted list of the police which will maintain a list of records of all the criminals with bounty reward.
 
 
-
-<b><h3>Video Link: <a href="https://www.youtube.com/watch?v=bN8u2JbtnsU&feature=youtu.be">https://www.youtube.com/watch?v=bN8u2JbtnsU&feature=youtu.be </a></h3><b> 
-<b>
-<hr>
-
-
 <b><h2>Tech Stack</h2></b>
 1. Python<br>
 2. Django<br>
