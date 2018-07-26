@@ -1,0 +1,60 @@
+#tbc{
+
+    background-color: #e8ebef;
+}
+#table {
+    overflow-y: hidden;
+        width: 100%;
+    }
+
+#thead, #tbody, #tr, #td, #th {   display: block;overflow-y: hidden; }
+
+#tr:after {
+    overflow-y: hidden;
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+#thead #th {
+
+    overflow-y: hidden;
+    height: 30%;
+height:auto;
+    /*text-align: left;*/
+}
+
+#tbody {
+    overflow-y: auto;
+   max-height: 200px;
+   height:auto;
+    /*overflow-y: auto;*/
+}
+
+#thead {
+    overflow-y: hidden;
+    /* fallback */
+}
+
+
+#tbody #td, #thead #th {
+    overflow-y: hidden;
+    width: 25%;
+    float: left;
+}
+
+#td{
+
+    color: blue;
+}
+
+#shortlink{
+color:blue;
+text-decoration: underline;
+}
+
+#taglink{
+color:blue;
+text-decoration: underline;
+}

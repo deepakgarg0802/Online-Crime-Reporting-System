@@ -1,0 +1,170 @@
+{% extends "citizen/base_site.html" %}
+
+{% block title %} User Dashboard {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+{% endblock stylesheets %}
+
+
+
+
+{% block content %}
+
+  <div class="right_col" role="main">
+    <div class="">
+      <div class="row top_tiles">
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="count">{{total}}</div>
+            <h3>Cases filed by me till date</h3>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="count">{{inprogress}}</div>
+            <h3>Approved and under investigation</h3>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="count">{{pending}}</div>
+            <h3>Pending for approval</h3>
+          </div>
+        </div>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="count">{{solved}}</div>
+            <h3>Cases got solved</h3>
+          </div>
+        </div>
+      </div>
+
+
+
+   <div class="row">
+        <div class="col-md-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Here are the wards that are handling your cases : <small></small></h2>
+            
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="demo-container" style="height:280px">
+        
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="http://utrim.me/ndiev1" allowfullscreen>
+</iframe>
+
+
+
+<!-- 
+  <h2>Solved/Total :: CASES <small></small></h2> 
+      -->           <div class="tiles">
+                  <div class="col-md-4 tile"><!-- 
+                    <span>Civilian Cases</span>
+                    <h2>{{cvsolved}} / {{cvsum}}</h2>
+                    <span class="sparkline11 graph" style="height: 160px;">
+                         <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                    </span> -->
+                  </div>
+                  <div class="col-md-4 tile"><!-- 
+                    <span>Cyber Cases</span>
+                    <h2>{{cysolved}} / {{cysum}}</h2>
+                    <span class="sparkline22 graph" style="height: 160px;">
+                          <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                    </span> -->
+                  </div>
+ 
+
+                </div>
+
+              </div>
+
+
+
+
+<!-- 
+
+              <div class="col-md-3 col-sm-12 col-xs-12">
+                <div>
+                  <div class="x_title">
+                    <h2>Police Profiles</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <ul class="list-unstyled top_profiles scroll-view">
+                  
+            {% for i,j in res %}
+
+                    <li class="media event">
+                      <a class="pull-left border-green profile_thumb">
+                        <i class="fa fa-user green"></i>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#">{{i}}</a>
+                        <p><strong>- {{j}} </strong> </p>
+                      </div>
+                    </li>
+               
+            {% endfor %}
+                  </ul>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+{% endblock content %}
+
+{% block javascripts %}
+  {{ block.super}}
+  <!-- Chart.js -->
+  <script src="/static/vendors/Chart.js/dist/Chart.min.js"></script>
+  <!-- gauge.js -->
+  <script src="/static/vendors/gauge.js/dist/gauge.min.js"></script>
+  <!-- Skycons -->
+  <script src="/static/vendors/skycons/skycons.js"></script>
+  <!-- Flot -->
+  <script src="/static/vendors/Flot/jquery.flot.js"></script>
+  <script src="/static/vendors/Flot/jquery.flot.pie.js"></script>
+  <script src="/static/vendors/Flot/jquery.flot.time.js"></script>
+  <script src="/static/vendors/Flot/jquery.flot.stack.js"></script>
+  <script src="/static/vendors/Flot/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="/static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+  <script src="/static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <script src="/static/vendors/flot.curvedlines/curvedLines.js"></script>
+  <!-- DateJS -->
+  <script src="/static/vendors/DateJS/build/date.js"></script>
+  <!-- JQVMap -->
+  <script src="/static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="/static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="/static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+{% endblock javascripts %}

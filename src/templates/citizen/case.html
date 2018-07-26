@@ -1,0 +1,54 @@
+{% extends "citizen/base_site.html" %}
+
+{% block title %} File Complain {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <!-- Animate.css -->
+  <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body_class %}login{% endblock body_class %}
+
+{% block body %}
+  <div>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          {% if cyber %}
+          <h3>CYBER CRIME REPORT</h3>
+
+            <div class="separator"></div>
+          {% else %}
+
+          <h3 style="margin-top:-25px;">File FIR</h3>
+          {% endif %}
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+          {{form.as_p}}
+
+           <div>
+                <input class="btn btn-default submit" type="submit" value="Submit">
+           </div>
+          </form>
+
+            <div class="clearfix"></div>
+
+
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div>
+                <h1><i class="fa fa-paw"></i> Rajasthan E-Police</h1>
+              </div>
+            </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+{% endblock body %}
+

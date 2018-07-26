@@ -1,0 +1,67 @@
+<div class="left_col scroll-view">
+  <div class="navbar nav_title" style="border: 0;">
+    <a href="{% url 'police_dashboard' %}" class="site_title"><i class="fa fa-spinner"></i> <span>Police Dashboard</span></a>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <!-- menu profile quick info -->
+  <div class="profile clearfix">
+    <!-- <div class="profile_pic">
+      <img src="#" alt="..." class="img-circle profile_img">
+    </div> -->
+    <div class="profile_info">
+       <span>Hello <b>{{request.user.username}}!</b></span>
+      <hr>
+      <span>Welcome to</span>
+      <h2>{{  request.user.ward.id }}</h2>
+    <hr>
+    </div>
+
+  </div>
+  <!-- /menu profile quick info -->
+
+  <br />
+
+  <!-- sidebar menu -->
+  <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+
+      <h3>Quick Links</h3>
+      <ul class="nav side-menu">
+        
+        <li ><a href="/"><i class="fa fa-home"></i>Home <span class=""></span></a>
+          <ul class="nav child_menu" id = "">
+
+          </ul>
+        </li>
+
+        <li id = "get_category"><a ><i class="fa fa-plus"></i>Civilian Cases <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu" id = "case_category">
+
+          </ul>
+        </li>
+
+
+        <li ><a ><i class="fa fa-plus"></i>Cyber Cases <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu" id = "get_cyber_category">
+
+          </ul>
+        </li>
+
+        <li ><a href="/police/atips/"><i class="fa fa-share"></i>Anonymous Tips / Complains <span class=""></span></a>
+          <ul class="nav child_menu" id = "get_cyber_category">
+
+          </ul>
+        </li>
+
+
+      </ul>
+    </div>
+
+
+  </div>
+  <!-- /sidebar menu -->
+
+
+</div>

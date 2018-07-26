@@ -1,0 +1,105 @@
+{% extends "citizen/base_site.html" %}
+
+{% block title %} General Elements {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="/static/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+  <link href="/static/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+  <link href="/static/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block content %}
+  <div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+        <div class="title_left">
+
+        </div>
+
+        <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <!-- <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+        {% for obj in cases_qset %}
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+               <ul class="nav navbar-right panel_toolbox">
+                <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+              </ul>
+              <h2><i class="fa fa-forward"></i><a href="{{ obj.get_absolute_url1 }}"> {{ obj.title }} </a><!-- <small>Float left</small> --></h2>
+
+
+            <div class="x_content">
+
+
+              <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#tab_content1-{{forloop.counter}}" id="home-tab-{{forloop.counter}}" role="tab" data-toggle="tab" aria-expanded="true">Description</a>
+                  </li>
+                  <li role="presentation" class=""><a href="#tab_content2-{{forloop.counter}}" role="tab" id="profile-tab-{{forloop.counter}}" data-toggle="tab" aria-expanded="false">category</a>
+                  </li>
+                  <li role="presentation" class=""><a href="#tab_content3-{{forloop.counter}}" role="tab" id="profile-tab2-{{forloop.counter}}" data-toggle="tab" aria-expanded="false">Ward Assosiated</a>
+                  </li>
+
+
+
+                </ul>
+                <div id="myTabContent-{{forloop.counter}}" class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade active in" id="tab_content1-{{forloop.counter}}" aria-labelledby="home-tab" style="min-height: 60px;">
+                    <p style="font-size: 15px;">{{ obj.description }} </p>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="tab_content2-{{forloop.counter}}" aria-labelledby="profile-tab">
+                    <p>{% if obj.case_categories %}{{ obj.case_categories }}{% endif %}
+                    {% if obj.cyber_case_categories %} {{obj.cyber_case_categories}} {% endif%}</p>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="tab_content3-{{forloop.counter}}" aria-labelledby="profile-tab">
+                    <p>{{ obj.ward_id.id }}</p>
+                  </div>
+                  <!-- <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                    <p> </p>
+                  </div> -->
+                </div>
+              </div>
+          </div>
+
+
+          <hr />
+              <div class = "case-footer">
+                <div class = "col-sm-8 col-md-8 col-xs-4">
+                  <p><b>Filed on:</b> {{obj.timestamp}} |
+                  {% if obj.approved %}{% if obj.solved %}Solved {% else %} Approved{% endif %}{% else %}Pending{% endif %}</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+{% endfor %}
+
+<!-- 
+ </div> </div> </div> </div>
+    </div>
+    <div class="clearfix"></div>
+  </div> -->
+{% endblock content %}
+
+{% block javascripts %}
+  {{ block.super }}
+
+{% endblock javascripts %}

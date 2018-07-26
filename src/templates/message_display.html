@@ -1,0 +1,12 @@
+{% load static %}
+    {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}
+                    {% if message.success %}success{% endif %}
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>{{ message | title }}</strong>
+            </div>
+                 {% endif %}
+            {% endfor %}
+    {% endif %}
