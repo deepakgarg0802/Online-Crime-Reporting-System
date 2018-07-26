@@ -1,0 +1,121 @@
+{% extends "citizen/base_site.html" %}
+
+{% block title %} Login {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <!-- Animate.css -->
+  <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body_class %}login{% endblock body_class %}
+
+{% block body %}
+
+<!-- Modal -->
+<div class="modal fade" id="bhamshahLoginModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bhamasah Auth</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <span>Enter Bhamashah Family Key</span>
+              <input type="text" class="form-control" placeholder="Family key" id = "bhamshah_key" required="" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id = "bhamshah_btn">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <h1 style="margin-top:-25px;">User Login</h1></section>
+
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form.as_p}}
+                <input class="btn btn-default submit" type="submit" value="Login">
+          </form>
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">Not registered ?
+                <a href="./register" class="to_register"> Sign Up </a>
+              </p>
+
+
+<div class="clearfix"></div>
+              <br />
+                <div>
+                <h2><i class="fa fa-info"></i> Demo Login Credentials</h2>
+                <h4> Username: username</h4>
+                <h4> Password: myuser123</h4>
+                                      
+              </div>
+            </div>
+
+
+              <div class="clearfix"></div>
+              <br />
+                <div>
+                <h1><i class="fa fa-paw"></i> Rajasthan E-Police</h1>
+              </div>
+            </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+      $("#bhamshah_btn").click(function(){
+          var key = $("#bhamshah_key").val();
+          $("#bhamshah_key").val("");
+          var url1 = "https://apitest.sewadwaar.rajasthan.gov.in/app/live/Service/hofAndMember/ForApp/"
+          var url2 = "?client_id=ad7288a4-7764-436d-a727-783a977f1fe1"
+
+          $.ajax({
+              type : 'GET',
+              contentType: "application/json; charset=utf-8",
+              url :  url1 + key + url2,
+              dataType : 'json',
+              success : function(data){
+                  console.log(data);
+              },
+              error: function(data){
+                  console.log(data, "xxx ");
+              }
+          });
+
+      })
+
+  })
+  </script>
+
+
+    {% endblock %}

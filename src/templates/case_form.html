@@ -1,0 +1,28 @@
+{% extends "base_site.html" %}
+{% block body %}
+
+
+   <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+  {{ form }}
+
+          </form>
+
+            <div class="clearfix"></div>
+
+
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div>
+                <h1><i class="fa fa-paw"></i> Rajasthan E-Police</h1>
+              </div>
+            </div>
+        </section>
+      </div>
+
+{% endblock %}

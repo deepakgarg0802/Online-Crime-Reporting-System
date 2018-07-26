@@ -1,0 +1,50 @@
+{% extends "citizen/base_site.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Login {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <!-- Animate.css -->
+  <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body_class %}login{% endblock body_class %}
+
+{% block body %}
+
+  <div>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <h1 style="margin-top:-25px;">User Register</h1></section>
+
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+
+              {{form | crispy }}
+
+
+                <input class="btn btn-danger submit" type="submit" value="Register">
+
+          </form>
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">already register ?
+                <a href="/citizen" class="to_register"> Sign In </a>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+              <div>
+                <h1><i class="fa fa-paw"></i> Rajasthan E-Police</h1>
+              </div>
+            </div>
+
+      </div>
+
+    </div>
+  </div>
+{% endblock body %}

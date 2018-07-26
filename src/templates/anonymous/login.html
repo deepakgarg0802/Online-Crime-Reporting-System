@@ -1,0 +1,48 @@
+{% extends "anonymous/base_site.html" %}
+{% block title %} Login {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <!-- Animate.css -->
+  <link href="/static/vendors/animate.css/animate.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body_class %}login{% endblock body_class %}
+
+{% block body %}
+  <div>
+    <a class="hiddenanchor" id="signin"></a>
+
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <h1 style="margin-top:-25px;">Anonymous  Login</h1></section>
+
+          <form method="POST"  enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form.as_p}}
+              <!--<input type="text" name='username' class="form-control" placeholder="Username" required />-->
+
+              <!--<input type="password" name='password' class="form-control" placeholder="Password" required />-->
+
+                <input class="btn btn-default submit" type="submit" value="Login">
+
+          </form>
+
+            <div class="clearfix"></div>
+
+
+
+              <div class="clearfix"></div>
+              <br />
+
+              <div>
+                <h1><i class="fa fa-paw"></i> Rajasthan E-Police</h1>
+              </div>
+            </div>
+
+      </div>
+
+    </div>
+  </div>
+{% endblock body %}

@@ -1,0 +1,151 @@
+{% extends "police/base_site.html" %}
+
+{% block title %} Citizen Profile {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="/static/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+  <link href="/static/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+  <link href="/static/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block content %}
+  <div class="right_col" role="main">
+    <div class="">
+      <div class="page-title">
+        <div class="title_left">
+          <h3>Citizen Profile</h3>
+        </div>
+<!-- 
+        <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="clearfix"></div>
+
+    
+
+    <div class="container" style="margin-top: 20px; margin-bottom: 80px">
+  <div class="rows">
+  <div class="col-md-7">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+         <!--  <div class="text-center">
+          <h1>Your Profile</h1>
+          </div> -->
+        </div>
+        <div class="panel-body">
+    {% if detail_flag %}
+
+      <div class="clearfix">
+
+
+  <label for="label">Family Id No: </label> {{data.FAMILYIDNO }}<br/>
+  <label for="label">Aadhar Card Id: </label> {{data.AADHAR_ID}}<br/>
+  <label for="label">BHAMASHAH ID: </label> {{data.BHAMASHAH_ID}}<br/>  
+      </div>  
+      <hr/>
+      <div class="clearfix">
+  <label for="label">Card Holder Name : </label> {{ data.NAME_ENG }}<br/>
+  <label for="label">Gender: </label> {{data.GENDER}}<br/>
+  <label for="label">DOB: </label> {{data.DOB}}<br/>
+  <label for="label">Spouce Name: </label> {{data.SPOUCE_NAME_ENG}}<br/>
+  <label for="label">MOTHER NAME: </label> {{data.MOTHER_NAME_ENG}}<br/>
+  <label for="label">FATHER NAME: </label> {{data.FATHER_NAME_ENG}}<br/>
+  <label for="label">RELATION: </label> {{data.RELATION_ENG}}<br/>
+  <label for="label">CATEGORY: </label> {{data.CATEGORY_DESC_ENG}}<br/> 
+        </div>  
+      <hr/> 
+  <div class="clearfix">
+  <label for="label">Address: </label> {{data.ADDRESS}}<br/>
+  <label for="label">Pin Code: </label> {{data.PIN_CODE}}<br/>
+  <label for="label">HOUSE NUMBER: </label> {{data.HOUSE_NUMBER_ENG}}<br/>
+  <label for="label">BUILDING NO: </label> {{data.BUILDING_NO_ENG}}<br/>
+  <label for="label">LAND MARK: </label> {{data.LAND_MARK_ENG}}<br/>
+  <label for="label">GP WARD: </label> {{data.GP_WARD}}<br/>
+  <label for="label">VILLAGE NAME: </label> {{data.VILLAGE_NAME}}<br/> 
+  <label for="label">BLOCK CITY: </label> {{data.BLOCK_CITY}}<br/>
+  <label for="label">DISTRICT: </label> {{data.DISTRICT}}<br/>
+  <label for="label">STATE: </label> {{data.STATE}}<br/>
+  
+      </div>  
+      <hr/>
+  
+  <div class="clearfix">
+  <label for="label">BANK NAME: </label> {{data.BANK_NAME}}<br/>
+  <label for="label">Family Bank Acc No: </label> {{data.ACC_NO}}<br/>
+  <label for="label">IFSC CODE: </label> {{data.IFSC_CODE}}<br/>
+  
+        </div>  
+      <hr/>
+  
+<div class="clearfix">
+  <label for="label">EDUCATION DESC: </label> {{data.EDUCATION_DESC_ENG}}<br/>  
+  <label for="label">INCOME DESCRIPTION: </label> {{data.INCOME_DESC_ENG}}<br/>
+  <label for="label">ECONOMIC GROUP: </label> {{data.ECONOMIC_GROUP}}<br/>
+  <label for="label">RATION CARD NO: </label> {{data.RATION_CARD_NO}}<br/>
+
+        </div>  
+      <hr/>
+  <div class="clearfix">
+  <label for="label">MOBILE NO: </label> {{data.MOBILE_NO}}<br/>
+  <label for="label">LANDLINE NO: </label> {{data.LANDLINE_NO}}<br/> 
+  <label for="label">FAX NO: </label> {{data.FAX_NO}}<br/>
+  <label for="label">EMAIL: </label> {{data.EMAIL}}<br/>
+      </div>  
+      <hr/>
+  <div class="clearfix">
+  <label for="label">M ID: </label> {{data.M_ID}}<br/>
+  <label for="label">IS RURAL: </label> {{data.IS_RURAL}}<br/>
+</div>
+
+{% else %}
+
+ <div class="clearfix">
+  No Additional Details Found !!  
+
+        </div>  
+      <hr/>
+
+      {% endif %}
+
+</div>
+</div>
+</div>
+
+{% if photo_flag %}
+<div class="col-md-2">
+<img src="data:image/png;base64,{{d64}}"/>
+</div>
+{% else %}
+<div class="col-md-2">
+Image
+</div>
+{% endif %}
+
+
+
+</div>
+</div>
+
+ </div> </div> </div> </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+{% endblock content %}
+
+{% block javascripts %}
+  {{ block.super }}
+  <!-- PNotify -->
+<!--   <script src="/static/vendors/pnotify/dist/pnotify.js"></script>
+  <script src="/static/vendors/pnotify/dist/pnotify.buttons.js"></script>
+  <script src="/static/vendors/pnotify/dist/pnotify.nonblock.js"></script> -->
+{% endblock javascripts %}
