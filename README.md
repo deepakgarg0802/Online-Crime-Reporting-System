@@ -33,7 +33,7 @@ The person with a criminal record could be dangerous to the society. There is a 
 
 
 <b><h2>Instructions for executing locally:</h2></b>
-1. cd raj_hack2k17<br>
+1. cd Online-Crime-Reporting-System<br>
 2. pip3 install -r requirements.txt<br>
 3. cd src/<br>
 4. ./manage.py makemigrations<br>
